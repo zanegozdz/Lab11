@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import os
 
 def main():
-    file_path = "C:/Users/Zmgoz/OneDrive/Documents/UF/Fall 2024/COP3502C/PycharmProjects/COP3502C/Labs/11-Module14LabGradeCalculator/data/submissions"
+    file_path = "data/submissions"
     while True:
         print("1. Student grade\n2. Assignment statistics\n3. Assignment graph")
         option = int(input("\nEnter your selection: "))
@@ -32,7 +32,7 @@ def main():
                 submissions_file = os.path.join(file_path, files)
                 with open(submissions_file, "r") as f:
                     submissions = f.readline().split("|")
-                    submissions_check.append(submissions)
+                    submissions_check.append(submissions[0])
                     student_code = submissions[0]
                     assignment_code = submissions[1]
                     grade_percentage = submissions[2]
@@ -46,7 +46,8 @@ def main():
                                 max_points = int(lines[i+1])
                                 total_points += int(lines[i+1])
                                 points_earned += (int(grade_percentage) / 100) * int(max_points)
-            if student_name not in submissions_check:
+
+            if student_id not in submissions_check:
                 print("Student not found")
                 break
             print(f"{round((points_earned/total_points) * 100)}%")
@@ -70,7 +71,7 @@ def main():
                 submissions_file = os.path.join(file_path, files)
                 with open(submissions_file, "r") as f:
                     submissions = f.readline().split("|")
-                    submissions_check.append(submissions)
+                    submissions_check.append(submissions[1])
                     if submissions[1] == assignment_code:
                         percentages.append(int(submissions[2]))
             if assignment_code not in submissions_check:
@@ -96,7 +97,7 @@ def main():
                 submissions_file = os.path.join(file_path, files)
                 with open(submissions_file, "r") as f:
                     submissions = f.readline().split("|")
-                    submissions_check.append(submissions)
+                    submissions_check.append(submissions[1])
                     if submissions[1] == assignment_code:
                         percentages.append(int(submissions[2]))
             plt.hist(percentages, bins=[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100])
