@@ -48,6 +48,7 @@ while True:
         if student_name not in submissions_check:
             print("Student not found")
         print(f"{round((points_earned/total_points) * 100)}%")
+
     elif option == 2:
         min_grade = 0
         max_grade = 0
