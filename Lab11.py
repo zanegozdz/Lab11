@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import os
 
 def main():
-    file_path = "C:\\Users\\Zmgoz\\OneDrive\\Documents\\UF\\Fall 2024\\COP3502C\\PycharmProjects\\COP3502C\\Labs\\11-Module14LabGradeCalculator\\data\\submissions"
+    file_path = "C:\/Users/Zmgoz/OneDrive/Documents/UF/Fall 2024/COP3502C/PycharmProjects/COP3502C/Labs/11-Module14LabGradeCalculator/data/submissions"
     while True:
         print("1. Student grade\n2. Assignment statistics\n3. Assignment graph")
         option = int(input("\nEnter your selection: "))
