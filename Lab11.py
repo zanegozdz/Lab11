@@ -17,7 +17,7 @@ def main():
             points_earned = 0
             total_points = 0
             max_points = 0
-            with open("data\\students.txt", "r") as f:
+            with open("data/students.txt", "r") as f:
                 lines = f.readlines()
                 students = []
                 for line in lines:
@@ -28,7 +28,7 @@ def main():
                         students_info[student_name] = student_id
 
             submissions_check = []
-            for files in os.listdir("data\\submissions"):
+            for files in os.listdir("data/submissions"):
                 submissions_file = os.path.join(file_path, files)
                 with open(submissions_file, "r") as f:
                     submissions = f.readline().split("|")
@@ -37,7 +37,7 @@ def main():
                     assignment_code = submissions[1]
                     grade_percentage = submissions[2]
                 if student_code == student_id:
-                    with open("data\\assignments.txt", "r") as f:
+                    with open("data/assignments.txt", "r") as f:
                         lines = []
                         for line in f.readlines():
                             lines.append(line.strip())
@@ -58,7 +58,7 @@ def main():
             assignment_code = ""
             percentages = []
             assignment = input("What is the assignment name: ")
-            with open("data\\assignments.txt", "r") as f:
+            with open("data/assignments.txt", "r") as f:
                 lines = []
                 for line in f.readlines():
                     lines.append(line.strip())
@@ -66,7 +66,7 @@ def main():
                     if lines[i] == assignment:
                         assignment_code = lines[i+1]
             submissions_check = []
-            for files in os.listdir("data\\submissions"):
+            for files in os.listdir("data/submissions"):
                 submissions_file = os.path.join(file_path, files)
                 with open(submissions_file, "r") as f:
                     submissions = f.readline().split("|")
@@ -85,14 +85,14 @@ def main():
             percentages = []
             submissions_check = []
             assignment = input("What is the assignment name: ")
-            with open("data\\assignments.txt", "r") as f:
+            with open("data/assignments.txt", "r") as f:
                 lines = []
                 for line in f.readlines():
                     lines.append(line.strip())
                 for i in range(len(lines)):
                     if lines[i] == assignment:
                         assignment_code = lines[i + 1]
-            for files in os.listdir("data\\submissions"):
+            for files in os.listdir("data/submissions"):
                 submissions_file = os.path.join(file_path, files)
                 with open(submissions_file, "r") as f:
                     submissions = f.readline().split("|")
